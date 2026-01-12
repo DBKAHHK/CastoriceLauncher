@@ -167,6 +167,7 @@
                                             <StackPanel Orientation="Horizontal" Spacing="8">
                                                 <Button x:Name="ServerStartButton" Style="{StaticResource GhostButton}" Click="OnStartServer" x:Uid="ServerStart" />
                                                 <Button x:Name="ServerStopButton" Style="{StaticResource GhostButton}" Click="OnStopServer" x:Uid="ServerStop" />
+                                                <Button x:Name="ServerRepairButton" Style="{StaticResource GhostButton}" Click="OnRepairServer" x:Uid="ServerRepair" />
                                             </StackPanel>
 
                                             <TextBlock Style="{StaticResource FieldLabel}" x:Uid="ServerLogLabel" />

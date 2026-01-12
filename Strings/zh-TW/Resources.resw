@@ -99,6 +99,9 @@
   <data name="ServerStop.Content" xml:space="preserve">
     <value>停止伺服器</value>
   </data>
+  <data name="ServerRepair.Content" xml:space="preserve">
+    <value>修復伺服器</value>
+  </data>
   <data name="ServerStopped" xml:space="preserve">
     <value>未執行</value>
   </data>
@@ -125,6 +128,18 @@
   </data>
   <data name="ServerRestoredFromCacheFormat" xml:space="preserve">
     <value>已從快取還原伺服器：{0}</value>
+  </data>
+  <data name="ServerRepairingFormat" xml:space="preserve">
+    <value>正在使用快取套件修復伺服器：{0}</value>
+  </data>
+  <data name="ServerRepairSucceeded" xml:space="preserve">
+    <value>伺服器修復完成。</value>
+  </data>
+  <data name="ServerRepairFailedFormat" xml:space="preserve">
+    <value>修復失敗：{0}</value>
+  </data>
+  <data name="ServerRepairNoPackage" xml:space="preserve">
+    <value>找不到可用的快取套件來修復。</value>
   </data>
   <data name="SettingsHeader.Text" xml:space="preserve">
     <value>設定</value>
@@ -284,6 +299,9 @@
   </data>
   <data name="UpdateStatusLabel.Text" xml:space="preserve">
     <value>更新狀態</value>
+  </data>
+  <data name="UpdateUsingCacheFormat" xml:space="preserve">
+    <value>使用快取套件：{0}</value>
   </data>
   <data name="UpdateCheck.Content" xml:space="preserve">
     <value>檢查更新</value>

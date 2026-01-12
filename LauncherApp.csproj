@@ -15,6 +15,10 @@
         <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>LauncherApp</RootNamespace>
+        <Version>1.0.1</Version>
+        <AssemblyVersion>1.0.1.0</AssemblyVersion>
+        <FileVersion>1.0.1.0</FileVersion>
+        <InformationalVersion>1.0.1</InformationalVersion>
 
         <!-- App Options -->
         <UseRidGraph>true</UseRidGraph>

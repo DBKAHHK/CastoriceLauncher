@@ -1,9 +1,11 @@
 using System.ComponentModel;
+using System.IO;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO.Compression;
 using System.Security.Cryptography;
 using System.Text;
+using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using Microsoft.UI.Xaml.Media.Imaging;
@@ -814,6 +816,57 @@ public partial class MainPage : Page
         StopServer();
     }
 
+    private void OnRepairServer(object sender, RoutedEventArgs e)
+    {
+        ReadSettingsFromUi();
+        settings.ApplyDefaults();
+        settings.Save();
+        UpdateServerSummary();
+
+        StopServer();
+
+        var serverExePath = ResolveServerExePath();
+        var serverDir = Path.GetDirectoryName(serverExePath);
+        if (string.IsNullOrWhiteSpace(serverDir))
+        {
+            AppendServerLog(R("ServerExeMissing"));
+            UpdateServerUi();
+            return;
+        }
+
+        var downloadsDir = GetUpdateDownloadsDir();
+        var zip = FindCachedPackageForVersion(downloadsDir, psUpdateManifest?.Version)
+            ?? GetLatestUpdateZipPath(downloadsDir);
+        if (string.IsNullOrWhiteSpace(zip) || !File.Exists(zip))
+        {
+            AppendServerLog(R("ServerRepairNoPackage"));
+            UpdateServerUi();
+            return;
+        }
+
+        AppendServerLog(RFormat("ServerRepairingFormat", Path.GetFileName(zip)));
+        var tmpExtract = Path.Combine(Path.GetTempPath(), $"CastoricePS-repair-{Guid.NewGuid():N}");
+        try
+        {
+            Directory.CreateDirectory(tmpExtract);
+            Directory.CreateDirectory(serverDir);
+            ClearDirectoryContents(serverDir);
+            ExtractZipToDirectory(zip, tmpExtract);
+            var sourceRoot = TryGetSingleRootDir(tmpExtract) ?? tmpExtract;
+            CopyDirectory(sourceRoot, serverDir);
+            AppendServerLog(R("ServerRepairSucceeded"));
+        }
+        catch (Exception ex)
+        {
+            AppendServerLog(RFormat("ServerRepairFailedFormat", ex.Message));
+        }
+        finally
+        {
+            try { if (Directory.Exists(tmpExtract)) Directory.Delete(tmpExtract, recursive: true); } catch { }
+            UpdateServerUi();
+        }
+    }
+
     private async Task EnsureServerRunningAsync()
     {
         if (serverProcess is { HasExited: false })
@@ -1180,40 +1233,51 @@ public partial class MainPage : Page
 
             var downloadsDir = GetUpdateDownloadsDir();
             Directory.CreateDirectory(downloadsDir);
-            var tmpZip = Path.Combine(downloadsDir, $"CastoricePS-{psUpdateManifest.Version}-{Guid.NewGuid():N}.zip");
             var tmpExtract = Path.Combine(Path.GetTempPath(), $"CastoricePS-extract-{Guid.NewGuid():N}");
 
             try
             {
-                psUpdateStatusOverride = R("UpdateDownloading");
-                psUpdateDownloading = true;
-                psUpdateDownloadPath = tmpZip;
-                UpdatePsUpdateUi();
-                await DownloadToFileAsync(packageUri, tmpZip, onProgress: (received, total) =>
-                {
-                    psUpdateDownloadedBytes = received;
-                    psUpdateTotalBytes = total;
-                    _ = DispatcherQueue.TryEnqueue(UpdatePsUpdateUi);
-                });
+                var cachedZip = FindCachedPackageForVersion(downloadsDir, psUpdateManifest.Version);
+                var usingCache = false;
+                string packageZip;
 
-                if (psUpdateManifest.Package.Size > 0)
+                if (!string.IsNullOrWhiteSpace(cachedZip) &&
+                    TryValidatePackageFile(cachedZip, psUpdateManifest.Package, out _))
                 {
-                    var actualSize = new FileInfo(tmpZip).Length;
-                    if (actualSize != psUpdateManifest.Package.Size)
+                    usingCache = true;
+                    packageZip = cachedZip;
+                    psUpdateStatusOverride = RFormat("UpdateUsingCacheFormat", Path.GetFileName(cachedZip));
+                    psUpdateDownloadPath = cachedZip;
+                    UpdatePsUpdateUi();
+                }
+                else
+                {
+                    if (!string.IsNullOrWhiteSpace(cachedZip))
                     {
-                        psUpdateStatusOverride = RFormat("UpdateSizeMismatchFormat", actualSize, psUpdateManifest.Package.Size);
-                        return;
+                        try { File.Delete(cachedZip); } catch { }
                     }
+
+                    var tmpZip = Path.Combine(downloadsDir, $"CastoricePS-{psUpdateManifest.Version}-{Guid.NewGuid():N}.zip");
+                    packageZip = tmpZip;
+
+                    psUpdateStatusOverride = R("UpdateDownloading");
+                    psUpdateDownloading = true;
+                    psUpdateDownloadPath = tmpZip;
+                    UpdatePsUpdateUi();
+                    await DownloadToFileAsync(packageUri, tmpZip, onProgress: (received, total) =>
+                    {
+                        psUpdateDownloadedBytes = received;
+                        psUpdateTotalBytes = total;
+                        _ = DispatcherQueue.TryEnqueue(UpdatePsUpdateUi);
+                    });
                 }
 
-                if (!string.IsNullOrWhiteSpace(psUpdateManifest.Package.Sha256))
+                if (!usingCache)
                 {
-                    psUpdateStatusOverride = R("UpdateVerifying");
-                    UpdatePsUpdateUi();
-                    var actual = ComputeSha256Hex(tmpZip);
-                    if (!actual.Equals(psUpdateManifest.Package.Sha256.Trim(), StringComparison.OrdinalIgnoreCase))
+                    if (!TryValidatePackageFile(packageZip, psUpdateManifest.Package, out var validationError))
                     {
-                        psUpdateStatusOverride = RFormat("UpdateHashMismatchFormat", actual);
+                        psUpdateStatusOverride = validationError;
+                        try { File.Delete(packageZip); } catch { }
                         return;
                     }
                 }
@@ -1221,7 +1285,7 @@ public partial class MainPage : Page
                 psUpdateStatusOverride = R("UpdateExtracting");
                 UpdatePsUpdateUi();
                 Directory.CreateDirectory(tmpExtract);
-                ExtractZipToDirectory(tmpZip, tmpExtract);
+                ExtractZipToDirectory(packageZip, tmpExtract);
 
                 var sourceRoot = TryGetSingleRootDir(tmpExtract) ?? tmpExtract;
 
@@ -1319,9 +1383,7 @@ public partial class MainPage : Page
             return settings.ServerExePath;
         }
 
-        var dir = Path.Combine(AppContext.BaseDirectory, "server");
-        Directory.CreateDirectory(dir);
-        var exe = Path.Combine(dir, "CastoricePS.exe");
+        var exe = Path.Combine(LauncherSettings.EnsureServerDirectory(), "CastoricePS.exe");
         settings.ServerExePath = exe;
         ServerPathBox.Text = exe;
         UpdateServerSummary();
@@ -1502,6 +1564,76 @@ public partial class MainPage : Page
         catch
         {
             return null;
+        }
+    }
+
+    private bool TryValidatePackageFile(string zipPath, PsUpdatePackage? package, out string? errorMessage)
+    {
+        errorMessage = null;
+        if (package == null) return true;
+
+        if (package.Size > 0)
+        {
+            var actualSize = new FileInfo(zipPath).Length;
+            if (actualSize != package.Size)
+            {
+                errorMessage = RFormat("UpdateSizeMismatchFormat", actualSize, package.Size);
+                return false;
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(package.Sha256))
+        {
+            var actual = ComputeSha256Hex(zipPath);
+            if (!actual.Equals(package.Sha256.Trim(), StringComparison.OrdinalIgnoreCase))
+            {
+                errorMessage = RFormat("UpdateHashMismatchFormat", actual);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private static string? FindCachedPackageForVersion(string downloadsDir, string? version)
+    {
+        if (string.IsNullOrWhiteSpace(version)) return null;
+
+        var invalidChars = Path.GetInvalidFileNameChars();
+        var builder = new StringBuilder();
+        foreach (var ch in version)
+        {
+            if (Array.IndexOf(invalidChars, ch) >= 0) continue;
+            builder.Append(ch);
+        }
+
+        var safeVersion = builder.ToString();
+        if (string.IsNullOrWhiteSpace(safeVersion)) return null;
+
+        return GetLatestUpdateZipPath(downloadsDir, $"CastoricePS-{safeVersion}-*.zip");
+    }
+
+    private static void ClearDirectoryContents(string dir)
+    {
+        if (!Directory.Exists(dir)) return;
+
+        foreach (var file in Directory.GetFiles(dir))
+        {
+            try
+            {
+                File.SetAttributes(file, FileAttributes.Normal);
+                File.Delete(file);
+            }
+            catch { }
+        }
+
+        foreach (var subDir in Directory.GetDirectories(dir))
+        {
+            try
+            {
+                Directory.Delete(subDir, recursive: true);
+            }
+            catch { }
         }
     }
 

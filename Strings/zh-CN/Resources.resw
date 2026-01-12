@@ -99,6 +99,9 @@
   <data name="ServerStop.Content" xml:space="preserve">
     <value>停止服务器</value>
   </data>
+  <data name="ServerRepair.Content" xml:space="preserve">
+    <value>修复服务器</value>
+  </data>
   <data name="ServerStopped" xml:space="preserve">
     <value>未运行</value>
   </data>
@@ -125,6 +128,18 @@
   </data>
   <data name="ServerRestoredFromCacheFormat" xml:space="preserve">
     <value>已从缓存恢复服务器：{0}</value>
+  </data>
+  <data name="ServerRepairingFormat" xml:space="preserve">
+    <value>使用缓存包修复服务器：{0}</value>
+  </data>
+  <data name="ServerRepairSucceeded" xml:space="preserve">
+    <value>服务器修复完成。</value>
+  </data>
+  <data name="ServerRepairFailedFormat" xml:space="preserve">
+    <value>修复失败：{0}</value>
+  </data>
+  <data name="ServerRepairNoPackage" xml:space="preserve">
+    <value>未找到可用于修复的缓存包。</value>
   </data>
   <data name="SettingsHeader.Text" xml:space="preserve">
     <value>设置</value>
@@ -284,6 +299,9 @@
   </data>
   <data name="UpdateStatusLabel.Text" xml:space="preserve">
     <value>更新状态</value>
+  </data>
+  <data name="UpdateUsingCacheFormat" xml:space="preserve">
+    <value>使用缓存更新包：{0}</value>
   </data>
   <data name="UpdateCheck.Content" xml:space="preserve">
     <value>检查更新</value>

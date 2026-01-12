@@ -84,10 +84,18 @@ public sealed class LauncherSettings
 
         if (string.IsNullOrWhiteSpace(ServerExePath))
         {
-            ServerExePath =
+            var found =
                 FindInParents("CastoricePS.exe", expectFile: true)
-                ?? FindInParents("zig-out\\bin\\CastoricePS.exe", expectFile: true)
-                ?? "";
+                ?? FindInParents("zig-out\\bin\\CastoricePS.exe", expectFile: true);
+            if (!string.IsNullOrWhiteSpace(found))
+            {
+                ServerExePath = found;
+            }
+            else
+            {
+                var serverDir = EnsureServerDirectory();
+                ServerExePath = Path.Combine(serverDir, "CastoricePS.exe");
+            }
         }
 
         if (string.IsNullOrWhiteSpace(BackgroundImagePath))
@@ -180,5 +188,12 @@ public sealed class LauncherSettings
         }
 
         return null;
+    }
+
+    public static string EnsureServerDirectory()
+    {
+        var dir = Path.Combine(AppContext.BaseDirectory, "server");
+        Directory.CreateDirectory(dir);
+        return dir;
     }
 }

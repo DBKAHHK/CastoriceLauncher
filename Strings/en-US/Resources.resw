@@ -99,6 +99,9 @@
   <data name="ServerStop.Content" xml:space="preserve">
     <value>Stop server</value>
   </data>
+  <data name="ServerRepair.Content" xml:space="preserve">
+    <value>Repair server</value>
+  </data>
   <data name="ServerStopped" xml:space="preserve">
     <value>Stopped</value>
   </data>
@@ -125,6 +128,18 @@
   </data>
   <data name="ServerRestoredFromCacheFormat" xml:space="preserve">
     <value>Server restored from cache: {0}</value>
+  </data>
+  <data name="ServerRepairingFormat" xml:space="preserve">
+    <value>Repairing server using {0}</value>
+  </data>
+  <data name="ServerRepairSucceeded" xml:space="preserve">
+    <value>Server repaired.</value>
+  </data>
+  <data name="ServerRepairFailedFormat" xml:space="preserve">
+    <value>Repair failed: {0}</value>
+  </data>
+  <data name="ServerRepairNoPackage" xml:space="preserve">
+    <value>No cached package found to repair.</value>
   </data>
   <data name="SettingsHeader.Text" xml:space="preserve">
     <value>Setup</value>
@@ -284,6 +299,9 @@
   </data>
   <data name="UpdateStatusLabel.Text" xml:space="preserve">
     <value>Update status</value>
+  </data>
+  <data name="UpdateUsingCacheFormat" xml:space="preserve">
+    <value>Using cached package: {0}</value>
   </data>
   <data name="UpdateCheck.Content" xml:space="preserve">
     <value>Check</value>
