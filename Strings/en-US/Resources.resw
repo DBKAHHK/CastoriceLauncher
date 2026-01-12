@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NavHome.Content" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="NavSettings.Content" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="NavTutorial.Content" xml:space="preserve">
+    <value>Tutorial</value>
+  </data>
+  <data name="NavLogs.Content" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="HomeHeader.Text" xml:space="preserve">
+    <value>Castorice Launcher</value>
+  </data>
+  <data name="HomeTagline.Text" xml:space="preserve">
+    <value>[ See you tomorrow. ]</value>
+  </data>
+  <data name="HomeSubtitle.Text" xml:space="preserve">
+    <value>Apply patch files, disable AccountPlatNative.dll, then start the game launcher as administrator.</value>
+  </data>
+  <data name="HomeGamePathLabel.Text" xml:space="preserve">
+    <value>Game executable</value>
+  </data>
+  <data name="HomePatchPathLabel.Text" xml:space="preserve">
+    <value>Patch folder</value>
+  </data>
+  <data name="HomeStatusLabel.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="HomeOpenSettings.Content" xml:space="preserve">
+    <value>Open settings</value>
+  </data>
+  <data name="HomeStartButton.Content" xml:space="preserve">
+    <value>Start game</value>
+  </data>
+  <data name="AnnouncementHeader.Text" xml:space="preserve">
+    <value>Announcements</value>
+  </data>
+  <data name="AnnouncementRefresh.Content" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="AnnouncementDefaultTitle" xml:space="preserve">
+    <value>Welcome back</value>
+  </data>
+  <data name="AnnouncementDefaultBody" xml:space="preserve">
+    <value>Set your announcement URL in Settings to show server news here.</value>
+  </data>
+  <data name="AnnouncementDefaultMeta" xml:space="preserve">
+    <value>Waiting for updates</value>
+  </data>
+  <data name="AnnouncementLoading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="AnnouncementLoaded" xml:space="preserve">
+    <value>Updated just now</value>
+  </data>
+  <data name="AnnouncementErrorFormat" xml:space="preserve">
+    <value>Failed to load: {0}</value>
+  </data>
+  <data name="LinksHeader.Text" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="LinkTools.Content" xml:space="preserve">
+    <value>SR Tools</value>
+  </data>
+  <data name="LinkDiscord.Content" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="ServerHeader.Text" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="ServerExeLabel.Text" xml:space="preserve">
+    <value>Server executable</value>
+  </data>
+  <data name="ServerStatusLabel.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ServerLogLabel.Text" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="ServerStart.Content" xml:space="preserve">
+    <value>Start server</value>
+  </data>
+  <data name="ServerStop.Content" xml:space="preserve">
+    <value>Stop server</value>
+  </data>
+  <data name="ServerStopped" xml:space="preserve">
+    <value>Stopped</value>
+  </data>
+  <data name="ServerRunningFormat" xml:space="preserve">
+    <value>Running (PID {0})</value>
+  </data>
+  <data name="ServerExeMissing" xml:space="preserve">
+    <value>Server executable not set or missing.</value>
+  </data>
+  <data name="ServerStartingFormat" xml:space="preserve">
+    <value>Starting server: {0}</value>
+  </data>
+  <data name="ServerStartFailedFormat" xml:space="preserve">
+    <value>Failed to start server: {0}</value>
+  </data>
+  <data name="ServerStopFailedFormat" xml:space="preserve">
+    <value>Failed to stop server: {0}</value>
+  </data>
+  <data name="ServerStoppedByUser" xml:space="preserve">
+    <value>Server stopped.</value>
+  </data>
+  <data name="ServerExitedFormat" xml:space="preserve">
+    <value>Server exited (code {0}).</value>
+  </data>
+  <data name="ServerRestoredFromCacheFormat" xml:space="preserve">
+    <value>Server restored from cache: {0}</value>
+  </data>
+  <data name="SettingsHeader.Text" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="SettingsGameExe.Header" xml:space="preserve">
+    <value>Game executable (Launcher.exe is in the same folder)</value>
+  </data>
+  <data name="SettingsBrowseGameExe.Content" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="SettingsPatchDir.Header" xml:space="preserve">
+    <value>Patch folder</value>
+  </data>
+  <data name="SettingsBrowsePatchDir.Content" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="SettingsServerExe.Header" xml:space="preserve">
+    <value>Server executable (CastoricePS.exe)</value>
+  </data>
+  <data name="SettingsBrowseServerExe.Content" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="SettingsBackground.Header" xml:space="preserve">
+    <value>Home background image</value>
+  </data>
+  <data name="SettingsBrowseBackground.Content" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="SettingsNoticeUrl.Header" xml:space="preserve">
+    <value>Announcement URL</value>
+  </data>
+  <data name="SettingsSave.Content" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SettingsLanguage.Header" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LanguageEnglish.Content" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="LanguageSimplified.Content" xml:space="preserve">
+    <value>Simplified Chinese</value>
+  </data>
+  <data name="LanguageTraditional.Content" xml:space="preserve">
+    <value>Traditional Chinese</value>
+  </data>
+  <data name="TutorialHeader.Text" xml:space="preserve">
+    <value>Tutorial</value>
+  </data>
+  <data name="TutorialBody.Text" xml:space="preserve">
+    <value>1. In Settings, choose the game Launcher.exe.&#x0A;2. Choose the patch folder (the folder that contains patch files).&#x0A;3. Return to Home and click Start. The launcher will copy patch files and start Launcher.exe as administrator.</value>
+  </data>
+  <data name="LogsHeader.Text" xml:space="preserve">
+    <value>Logs</value>
+  </data>
+  <data name="LogsCopy.Content" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="LogsExport.Content" xml:space="preserve">
+    <value>Export logs.txt</value>
+  </data>
+  <data name="LogsClear.Content" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="LogsCopied" xml:space="preserve">
+    <value>Copied to clipboard.</value>
+  </data>
+  <data name="LogsCleared" xml:space="preserve">
+    <value>Cleared.</value>
+  </data>
+  <data name="LogsExportCanceled" xml:space="preserve">
+    <value>Export canceled.</value>
+  </data>
+  <data name="LogsExportedFormat" xml:space="preserve">
+    <value>Exported: {0}</value>
+  </data>
+  <data name="LogsCopyFailedFormat" xml:space="preserve">
+    <value>Copy failed: {0}</value>
+  </data>
+  <data name="LogsExportFailedFormat" xml:space="preserve">
+    <value>Export failed: {0}</value>
+  </data>
+  <data name="NotSetPlaceholder" xml:space="preserve">
+    <value>(not set)</value>
+  </data>
+  <data name="StatusIdle" xml:space="preserve">
+    <value>Idle</value>
+  </data>
+  <data name="StatusSettingsSaved" xml:space="preserve">
+    <value>Settings saved.</value>
+  </data>
+  <data name="StatusCopyingPatch" xml:space="preserve">
+    <value>Copying patch files...</value>
+  </data>
+  <data name="StatusRenamingPlugin" xml:space="preserve">
+    <value>Renaming AccountPlatNative.dll...</value>
+  </data>
+  <data name="StatusPluginRenameFailedFormat" xml:space="preserve">
+    <value>Failed to rename AccountPlatNative.dll: {0}</value>
+  </data>
+  <data name="StatusGameExeMissing" xml:space="preserve">
+    <value>Game executable not set or missing.</value>
+  </data>
+  <data name="StatusPatchMissing" xml:space="preserve">
+    <value>Patch folder not set or missing.</value>
+  </data>
+  <data name="StatusGameDirInvalid" xml:space="preserve">
+    <value>Game directory is invalid.</value>
+  </data>
+  <data name="StatusLauncherNotFound" xml:space="preserve">
+    <value>Launcher.exe not found after patch copy.</value>
+  </data>
+  <data name="StatusLauncherAlreadyRunning" xml:space="preserve">
+    <value>Launcher already running.</value>
+  </data>
+  <data name="StatusLaunchCanceledFormat" xml:space="preserve">
+    <value>Launch canceled: {0}</value>
+  </data>
+  <data name="StatusLauncherFailed" xml:space="preserve">
+    <value>Launcher failed to start.</value>
+  </data>
+  <data name="StatusLaunchSuccess" xml:space="preserve">
+    <value>Patch applied. Launcher started as administrator.</value>
+  </data>
+  <data name="UnknownError" xml:space="preserve">
+    <value>Unknown error</value>
+  </data>
+  <data name="UpdateHeader.Text" xml:space="preserve">
+    <value>Updates</value>
+  </data>
+  <data name="LauncherUpdateHeader.Text" xml:space="preserve">
+    <value>Launcher update</value>
+  </data>
+  <data name="LauncherUpdateLocalVersionLabel.Text" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="LauncherUpdateLatestVersionLabel.Text" xml:space="preserve">
+    <value>Latest</value>
+  </data>
+  <data name="LauncherUpdateNotesLabel.Text" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="LauncherUpdateStatusLabel.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="LauncherUpdateInstall.Content" xml:space="preserve">
+    <value>Update launcher</value>
+  </data>
+  <data name="UpdateLocalVersionLabel.Text" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="UpdateLatestVersionLabel.Text" xml:space="preserve">
+    <value>Latest</value>
+  </data>
+  <data name="UpdateNotesLabel.Text" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="UpdateStatusLabel.Text" xml:space="preserve">
+    <value>Update status</value>
+  </data>
+  <data name="UpdateCheck.Content" xml:space="preserve">
+    <value>Check</value>
+  </data>
+  <data name="UpdateInstall.Content" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="SettingsUpdateUrl.Header" xml:space="preserve">
+    <value>Update manifest URL</value>
+  </data>
+  <data name="UpdateVersionUnknown" xml:space="preserve">
+    <value>(unknown)</value>
+  </data>
+  <data name="UpdateNotInstalled" xml:space="preserve">
+    <value>(not installed)</value>
+  </data>
+  <data name="UpdateCacheLatest" xml:space="preserve">
+    <value>Latest</value>
+  </data>
+  <data name="UpdateNotChecked" xml:space="preserve">
+    <value>Not checked</value>
+  </data>
+  <data name="UpdateNotesNotAvailable" xml:space="preserve">
+    <value>(no notes)</value>
+  </data>
+  <data name="UpdateChecking" xml:space="preserve">
+    <value>Checking...</value>
+  </data>
+  <data name="UpdateDownloading" xml:space="preserve">
+    <value>Downloading update...</value>
+  </data>
+  <data name="UpdateExtracting" xml:space="preserve">
+    <value>Extracting...</value>
+  </data>
+  <data name="UpdateVerifying" xml:space="preserve">
+    <value>Verifying package...</value>
+  </data>
+  <data name="UpdateInstalling" xml:space="preserve">
+    <value>Installing...</value>
+  </data>
+  <data name="UpdateInstalled" xml:space="preserve">
+    <value>Update installed.</value>
+  </data>
+  <data name="UpdateUrlNotSet" xml:space="preserve">
+    <value>Update URL not set.</value>
+  </data>
+  <data name="UpdateUpToDate" xml:space="preserve">
+    <value>Up to date.</value>
+  </data>
+  <data name="UpdateAvailable" xml:space="preserve">
+    <value>Update available.</value>
+  </data>
+  <data name="UpdateCheckFailedFormat" xml:space="preserve">
+    <value>Update check failed: {0}</value>
+  </data>
+  <data name="UpdateInvalidUrlFormat" xml:space="preserve">
+    <value>Invalid update URL: {0}</value>
+  </data>
+  <data name="UpdateInstallFailedFormat" xml:space="preserve">
+    <value>Install failed: {0}</value>
+  </data>
+  <data name="UpdateNoPackage" xml:space="preserve">
+    <value>No update package in manifest.</value>
+  </data>
+  <data name="UpdateServerPathMissing" xml:space="preserve">
+    <value>Server executable not set.</value>
+  </data>
+  <data name="UpdateServerDirInvalid" xml:space="preserve">
+    <value>Server directory is invalid.</value>
+  </data>
+  <data name="UpdateSizeMismatchFormat" xml:space="preserve">
+    <value>Size mismatch (got {0}, expected {1}).</value>
+  </data>
+  <data name="UpdateHashMismatchFormat" xml:space="preserve">
+    <value>SHA256 mismatch (got {0}).</value>
+  </data>
+  <data name="UpdateDownloadPathLabel.Text" xml:space="preserve">
+    <value>Download to</value>
+  </data>
+  <data name="UpdateProgressFormat" xml:space="preserve">
+    <value>{0} / {1}</value>
+  </data>
+  <data name="UpdateProgressUnknownTotalFormat" xml:space="preserve">
+    <value>{0} downloaded</value>
+  </data>
+</root>

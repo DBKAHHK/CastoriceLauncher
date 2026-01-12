@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NavHome.Content" xml:space="preserve">
+    <value>主页</value>
+  </data>
+  <data name="NavSettings.Content" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="NavTutorial.Content" xml:space="preserve">
+    <value>教程</value>
+  </data>
+  <data name="NavLogs.Content" xml:space="preserve">
+    <value>日志</value>
+  </data>
+  <data name="HomeHeader.Text" xml:space="preserve">
+    <value>Castorice 启动器</value>
+  </data>
+  <data name="HomeTagline.Text" xml:space="preserve">
+    <value>[ 欢迎回来。 ]</value>
+  </data>
+  <data name="HomeSubtitle.Text" xml:space="preserve">
+    <value>应用补丁、禁用 AccountPlatNative.dll，然后以管理员身份启动游戏 Launcher。</value>
+  </data>
+  <data name="HomeGamePathLabel.Text" xml:space="preserve">
+    <value>游戏可执行文件</value>
+  </data>
+  <data name="HomePatchPathLabel.Text" xml:space="preserve">
+    <value>补丁目录</value>
+  </data>
+  <data name="HomeStatusLabel.Text" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="HomeOpenSettings.Content" xml:space="preserve">
+    <value>打开设置</value>
+  </data>
+  <data name="HomeStartButton.Content" xml:space="preserve">
+    <value>开始游戏</value>
+  </data>
+  <data name="AnnouncementHeader.Text" xml:space="preserve">
+    <value>公告</value>
+  </data>
+  <data name="AnnouncementRefresh.Content" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="AnnouncementDefaultTitle" xml:space="preserve">
+    <value>欢迎回来</value>
+  </data>
+  <data name="AnnouncementDefaultBody" xml:space="preserve">
+    <value>在设置里填写公告地址后，这里会显示服务器公告。</value>
+  </data>
+  <data name="AnnouncementDefaultMeta" xml:space="preserve">
+    <value>等待更新</value>
+  </data>
+  <data name="AnnouncementLoading" xml:space="preserve">
+    <value>加载中...</value>
+  </data>
+  <data name="AnnouncementLoaded" xml:space="preserve">
+    <value>刚刚更新</value>
+  </data>
+  <data name="AnnouncementErrorFormat" xml:space="preserve">
+    <value>加载失败：{0}</value>
+  </data>
+  <data name="LinksHeader.Text" xml:space="preserve">
+    <value>链接</value>
+  </data>
+  <data name="LinkTools.Content" xml:space="preserve">
+    <value>SR 工具</value>
+  </data>
+  <data name="LinkDiscord.Content" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="ServerHeader.Text" xml:space="preserve">
+    <value>服务器</value>
+  </data>
+  <data name="ServerExeLabel.Text" xml:space="preserve">
+    <value>服务器程序</value>
+  </data>
+  <data name="ServerStatusLabel.Text" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="ServerLogLabel.Text" xml:space="preserve">
+    <value>日志</value>
+  </data>
+  <data name="ServerStart.Content" xml:space="preserve">
+    <value>启动服务器</value>
+  </data>
+  <data name="ServerStop.Content" xml:space="preserve">
+    <value>停止服务器</value>
+  </data>
+  <data name="ServerStopped" xml:space="preserve">
+    <value>未运行</value>
+  </data>
+  <data name="ServerRunningFormat" xml:space="preserve">
+    <value>运行中（PID {0}）</value>
+  </data>
+  <data name="ServerExeMissing" xml:space="preserve">
+    <value>服务器程序未设置或不存在。</value>
+  </data>
+  <data name="ServerStartingFormat" xml:space="preserve">
+    <value>正在启动服务器：{0}</value>
+  </data>
+  <data name="ServerStartFailedFormat" xml:space="preserve">
+    <value>启动服务器失败：{0}</value>
+  </data>
+  <data name="ServerStopFailedFormat" xml:space="preserve">
+    <value>停止服务器失败：{0}</value>
+  </data>
+  <data name="ServerStoppedByUser" xml:space="preserve">
+    <value>服务器已停止。</value>
+  </data>
+  <data name="ServerExitedFormat" xml:space="preserve">
+    <value>服务器已退出（代码 {0}）。</value>
+  </data>
+  <data name="ServerRestoredFromCacheFormat" xml:space="preserve">
+    <value>已从缓存恢复服务器：{0}</value>
+  </data>
+  <data name="SettingsHeader.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="SettingsGameExe.Header" xml:space="preserve">
+    <value>游戏可执行文件（Launcher.exe 与其在同一目录）</value>
+  </data>
+  <data name="SettingsBrowseGameExe.Content" xml:space="preserve">
+    <value>浏览...</value>
+  </data>
+  <data name="SettingsPatchDir.Header" xml:space="preserve">
+    <value>补丁目录</value>
+  </data>
+  <data name="SettingsBrowsePatchDir.Content" xml:space="preserve">
+    <value>浏览...</value>
+  </data>
+  <data name="SettingsServerExe.Header" xml:space="preserve">
+    <value>服务器程序（CastoricePS.exe）</value>
+  </data>
+  <data name="SettingsBrowseServerExe.Content" xml:space="preserve">
+    <value>浏览...</value>
+  </data>
+  <data name="SettingsBackground.Header" xml:space="preserve">
+    <value>主页背景图</value>
+  </data>
+  <data name="SettingsBrowseBackground.Content" xml:space="preserve">
+    <value>浏览...</value>
+  </data>
+  <data name="SettingsNoticeUrl.Header" xml:space="preserve">
+    <value>公告地址</value>
+  </data>
+  <data name="SettingsSave.Content" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="SettingsLanguage.Header" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="LanguageEnglish.Content" xml:space="preserve">
+    <value>英语</value>
+  </data>
+  <data name="LanguageSimplified.Content" xml:space="preserve">
+    <value>简体中文</value>
+  </data>
+  <data name="LanguageTraditional.Content" xml:space="preserve">
+    <value>繁體中文</value>
+  </data>
+  <data name="TutorialHeader.Text" xml:space="preserve">
+    <value>教程</value>
+  </data>
+  <data name="TutorialBody.Text" xml:space="preserve">
+    <value>1. 在设置里选择游戏 Launcher.exe。&#x0A;2. 选择补丁目录（包含补丁文件的文件夹）。&#x0A;3. 回到主页点击开始。程序会复制补丁并以管理员身份启动 Launcher.exe。</value>
+  </data>
+  <data name="LogsHeader.Text" xml:space="preserve">
+    <value>日志</value>
+  </data>
+  <data name="LogsCopy.Content" xml:space="preserve">
+    <value>一键复制</value>
+  </data>
+  <data name="LogsExport.Content" xml:space="preserve">
+    <value>导出 logs.txt</value>
+  </data>
+  <data name="LogsClear.Content" xml:space="preserve">
+    <value>清空</value>
+  </data>
+  <data name="LogsCopied" xml:space="preserve">
+    <value>已复制到剪贴板。</value>
+  </data>
+  <data name="LogsCleared" xml:space="preserve">
+    <value>已清空。</value>
+  </data>
+  <data name="LogsExportCanceled" xml:space="preserve">
+    <value>已取消导出。</value>
+  </data>
+  <data name="LogsExportedFormat" xml:space="preserve">
+    <value>已导出：{0}</value>
+  </data>
+  <data name="LogsCopyFailedFormat" xml:space="preserve">
+    <value>复制失败：{0}</value>
+  </data>
+  <data name="LogsExportFailedFormat" xml:space="preserve">
+    <value>导出失败：{0}</value>
+  </data>
+  <data name="NotSetPlaceholder" xml:space="preserve">
+    <value>（未设置）</value>
+  </data>
+  <data name="StatusIdle" xml:space="preserve">
+    <value>空闲</value>
+  </data>
+  <data name="StatusSettingsSaved" xml:space="preserve">
+    <value>设置已保存。</value>
+  </data>
+  <data name="StatusCopyingPatch" xml:space="preserve">
+    <value>正在复制补丁文件...</value>
+  </data>
+  <data name="StatusRenamingPlugin" xml:space="preserve">
+    <value>正在重命名 AccountPlatNative.dll...</value>
+  </data>
+  <data name="StatusPluginRenameFailedFormat" xml:space="preserve">
+    <value>重命名 AccountPlatNative.dll 失败：{0}</value>
+  </data>
+  <data name="StatusGameExeMissing" xml:space="preserve">
+    <value>游戏可执行文件未设置或不存在。</value>
+  </data>
+  <data name="StatusPatchMissing" xml:space="preserve">
+    <value>补丁目录未设置或不存在。</value>
+  </data>
+  <data name="StatusGameDirInvalid" xml:space="preserve">
+    <value>游戏目录无效。</value>
+  </data>
+  <data name="StatusLauncherNotFound" xml:space="preserve">
+    <value>复制补丁后未找到 Launcher.exe。</value>
+  </data>
+  <data name="StatusLauncherAlreadyRunning" xml:space="preserve">
+    <value>Launcher 已在运行。</value>
+  </data>
+  <data name="StatusLaunchCanceledFormat" xml:space="preserve">
+    <value>启动已取消：{0}</value>
+  </data>
+  <data name="StatusLauncherFailed" xml:space="preserve">
+    <value>Launcher 启动失败。</value>
+  </data>
+  <data name="StatusLaunchSuccess" xml:space="preserve">
+    <value>补丁已应用，已以管理员身份启动 Launcher。</value>
+  </data>
+  <data name="UnknownError" xml:space="preserve">
+    <value>未知错误</value>
+  </data>
+  <data name="UpdateHeader.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="LauncherUpdateHeader.Text" xml:space="preserve">
+    <value>启动器更新</value>
+  </data>
+  <data name="LauncherUpdateLocalVersionLabel.Text" xml:space="preserve">
+    <value>本地版本</value>
+  </data>
+  <data name="LauncherUpdateLatestVersionLabel.Text" xml:space="preserve">
+    <value>最新版本</value>
+  </data>
+  <data name="LauncherUpdateNotesLabel.Text" xml:space="preserve">
+    <value>更新说明</value>
+  </data>
+  <data name="LauncherUpdateStatusLabel.Text" xml:space="preserve">
+    <value>更新状态</value>
+  </data>
+  <data name="LauncherUpdateInstall.Content" xml:space="preserve">
+    <value>更新启动器</value>
+  </data>
+  <data name="UpdateLocalVersionLabel.Text" xml:space="preserve">
+    <value>本地版本</value>
+  </data>
+  <data name="UpdateLatestVersionLabel.Text" xml:space="preserve">
+    <value>最新版本</value>
+  </data>
+  <data name="UpdateNotesLabel.Text" xml:space="preserve">
+    <value>更新说明</value>
+  </data>
+  <data name="UpdateStatusLabel.Text" xml:space="preserve">
+    <value>更新状态</value>
+  </data>
+  <data name="UpdateCheck.Content" xml:space="preserve">
+    <value>检查更新</value>
+  </data>
+  <data name="UpdateInstall.Content" xml:space="preserve">
+    <value>安装更新</value>
+  </data>
+  <data name="SettingsUpdateUrl.Header" xml:space="preserve">
+    <value>更新清单地址（manifest）</value>
+  </data>
+  <data name="UpdateVersionUnknown" xml:space="preserve">
+    <value>（未知）</value>
+  </data>
+  <data name="UpdateNotInstalled" xml:space="preserve">
+    <value>（未安装）</value>
+  </data>
+  <data name="UpdateCacheLatest" xml:space="preserve">
+    <value>最近下载</value>
+  </data>
+  <data name="UpdateNotChecked" xml:space="preserve">
+    <value>未检查</value>
+  </data>
+  <data name="UpdateNotesNotAvailable" xml:space="preserve">
+    <value>（无说明）</value>
+  </data>
+  <data name="UpdateChecking" xml:space="preserve">
+    <value>正在检查...</value>
+  </data>
+  <data name="UpdateDownloading" xml:space="preserve">
+    <value>正在下载更新...</value>
+  </data>
+  <data name="UpdateExtracting" xml:space="preserve">
+    <value>正在解压...</value>
+  </data>
+  <data name="UpdateVerifying" xml:space="preserve">
+    <value>正在校验...</value>
+  </data>
+  <data name="UpdateInstalling" xml:space="preserve">
+    <value>正在安装...</value>
+  </data>
+  <data name="UpdateInstalled" xml:space="preserve">
+    <value>更新已安装。</value>
+  </data>
+  <data name="UpdateUrlNotSet" xml:space="preserve">
+    <value>未设置更新地址。</value>
+  </data>
+  <data name="UpdateUpToDate" xml:space="preserve">
+    <value>已是最新。</value>
+  </data>
+  <data name="UpdateAvailable" xml:space="preserve">
+    <value>有可用更新。</value>
+  </data>
+  <data name="UpdateCheckFailedFormat" xml:space="preserve">
+    <value>检查更新失败：{0}</value>
+  </data>
+  <data name="UpdateInvalidUrlFormat" xml:space="preserve">
+    <value>更新地址无效：{0}</value>
+  </data>
+  <data name="UpdateInstallFailedFormat" xml:space="preserve">
+    <value>安装失败：{0}</value>
+  </data>
+  <data name="UpdateNoPackage" xml:space="preserve">
+    <value>清单里没有更新包。</value>
+  </data>
+  <data name="UpdateServerPathMissing" xml:space="preserve">
+    <value>未设置服务器程序路径。</value>
+  </data>
+  <data name="UpdateServerDirInvalid" xml:space="preserve">
+    <value>服务器目录无效。</value>
+  </data>
+  <data name="UpdateSizeMismatchFormat" xml:space="preserve">
+    <value>文件大小不匹配（得到 {0}，期望 {1}）。</value>
+  </data>
+  <data name="UpdateHashMismatchFormat" xml:space="preserve">
+    <value>SHA256 不匹配（得到 {0}）。</value>
+  </data>
+  <data name="UpdateDownloadPathLabel.Text" xml:space="preserve">
+    <value>下载到</value>
+  </data>
+  <data name="UpdateProgressFormat" xml:space="preserve">
+    <value>{0} / {1}</value>
+  </data>
+  <data name="UpdateProgressUnknownTotalFormat" xml:space="preserve">
+    <value>已下载 {0}</value>
+  </data>
+</root>

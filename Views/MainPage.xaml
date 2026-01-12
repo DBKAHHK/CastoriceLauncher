@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Page
+    x:Class="LauncherApp.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:LauncherApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Transparent">
+    <Page.Content>
+        <NavigationView
+            x:Name="NavView"
+            IsBackButtonVisible="Collapsed"
+            IsSettingsVisible="False"
+            SelectionChanged="OnNavSelectionChanged"
+            Background="Transparent"
+            PaneDisplayMode="Left"
+            PaneTitle="">
+            <NavigationView.Resources>
+                <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="#B3FFFFFF" />
+                <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="#B3FFFFFF" />
+                <SolidColorBrush x:Key="NavigationViewTopPaneBackground" Color="#00FFFFFF" />
+                <SolidColorBrush x:Key="NavigationViewContentBackground" Color="#00FFFFFF" />
+            </NavigationView.Resources>
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:Name="HomeNavItem" Icon="Home" Tag="home" x:Uid="NavHome" />
+                <NavigationViewItem x:Name="SettingsNavItem" Icon="Setting" Tag="settings" x:Uid="NavSettings" />
+                <NavigationViewItem x:Name="LogsNavItem" Icon="Document" Tag="logs" x:Uid="NavLogs" />
+                <NavigationViewItem x:Name="TutorialNavItem" Icon="Help" Tag="tutorial" x:Uid="NavTutorial" />
+            </NavigationView.MenuItems>
+            <NavigationView.Content>
+                <Grid x:Name="RootGrid" Padding="0">
+                    <Grid.Resources>
+                        <SolidColorBrush x:Key="PaneSurfaceBrush" Color="#B3FFFFFF" />
+                        <SolidColorBrush x:Key="CardSurfaceBrush" Color="#99FFFFFF" />
+                        <SolidColorBrush x:Key="CardBorderBrush" Color="#1A000000" />
+                        <SolidColorBrush x:Key="GhostButtonBackgroundBrush" Color="#14000000" />
+                        <SolidColorBrush x:Key="IconButtonBackgroundBrush" Color="#14000000" />
+                        <SolidColorBrush x:Key="AccentBrush" Color="#1E6FFF" />
+                        <SolidColorBrush x:Key="LinkForegroundBrush" Color="#1E6FFF" />
+                        <SolidColorBrush x:Key="HeroTaglineBrush" Color="#E91E63" />
+
+                        <Style x:Key="SectionHeader" TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="22" />
+                            <Setter Property="FontWeight" Value="SemiBold" />
+                            <Setter Property="FontFamily" Value="Bahnschrift" />
+                            <Setter Property="Margin" Value="0,0,0,8" />
+                        </Style>
+                        <Style x:Key="HeroTitle" TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="26" />
+                            <Setter Property="FontWeight" Value="SemiBold" />
+                            <Setter Property="FontFamily" Value="Bahnschrift" />
+                        </Style>
+                        <Style x:Key="HeroTagline" TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="18" />
+                            <Setter Property="FontFamily" Value="Consolas" />
+                            <Setter Property="Foreground" Value="{StaticResource HeroTaglineBrush}" />
+                        </Style>
+                        <Style x:Key="SubtleText" TargetType="TextBlock">
+                            <Setter Property="Opacity" Value="0.75" />
+                        </Style>
+                        <Style x:Key="FieldLabel" TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="14" />
+                            <Setter Property="FontWeight" Value="SemiBold" />
+                            <Setter Property="Margin" Value="0,12,0,0" />
+                        </Style>
+                        <Style x:Key="CardBorder" TargetType="Border">
+                            <Setter Property="Background" Value="{StaticResource CardSurfaceBrush}" />
+                            <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}" />
+                            <Setter Property="BorderThickness" Value="1" />
+                            <Setter Property="CornerRadius" Value="18" />
+                            <Setter Property="Padding" Value="18" />
+                        </Style>
+                        <Style x:Key="CardTitle" TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="16" />
+                            <Setter Property="FontWeight" Value="SemiBold" />
+                        </Style>
+                        <Style x:Key="AnnouncementTitle" TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="15" />
+                            <Setter Property="FontWeight" Value="SemiBold" />
+                        </Style>
+                        <Style x:Key="PrimaryStartButton" TargetType="Button">
+                            <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="CornerRadius" Value="10" />
+                            <Setter Property="Padding" Value="26,16" />
+                            <Setter Property="FontSize" Value="16" />
+                            <Setter Property="FontWeight" Value="SemiBold" />
+                        </Style>
+                        <Style x:Key="GhostButton" TargetType="Button">
+                            <Setter Property="Background" Value="{StaticResource GhostButtonBackgroundBrush}" />
+                            <Setter Property="Foreground" Value="{ThemeResource TextFillColorPrimaryBrush}" />
+                            <Setter Property="CornerRadius" Value="8" />
+                            <Setter Property="Padding" Value="12,8" />
+                        </Style>
+                        <Style x:Key="LinkButton" TargetType="Button">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="BorderThickness" Value="0" />
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Foreground" Value="{StaticResource LinkForegroundBrush}" />
+                            <Setter Property="Padding" Value="6,4" />
+                        </Style>
+                        <Style x:Key="IconButton" TargetType="Button">
+                            <Setter Property="Background" Value="{StaticResource IconButtonBackgroundBrush}" />
+                            <Setter Property="CornerRadius" Value="8" />
+                            <Setter Property="Padding" Value="8,6" />
+                        </Style>
+                    </Grid.Resources>
+
+                    <Grid x:Name="HomeView">
+
+                        <Rectangle>
+                            <Rectangle.Fill>
+                                <ImageBrush x:Name="HomeBackgroundBrush" Stretch="UniformToFill" Opacity="0.55" />
+                            </Rectangle.Fill>
+                        </Rectangle>
+
+                        <ScrollViewer>
+                            <Grid Margin="20" ColumnDefinitions="2*,*" ColumnSpacing="20">
+                                <Border Grid.Column="0" Style="{StaticResource CardBorder}">
+                                    <StackPanel Spacing="14">
+                                        <TextBlock Style="{StaticResource HeroTagline}" x:Uid="HomeTagline" />
+                                        <TextBlock Style="{StaticResource HeroTitle}" x:Uid="HomeHeader" />
+                                        <TextBlock Style="{StaticResource SubtleText}" TextWrapping="Wrap" x:Uid="HomeSubtitle" />
+
+                                        <Grid ColumnDefinitions="*,*" ColumnSpacing="16">
+                                            <StackPanel Grid.Column="0">
+                                                <TextBlock Style="{StaticResource FieldLabel}" x:Uid="HomeGamePathLabel" />
+                                                <TextBlock x:Name="GamePathSummaryText" TextWrapping="Wrap" />
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="1">
+                                                <TextBlock Style="{StaticResource FieldLabel}" x:Uid="HomePatchPathLabel" />
+                                                <TextBlock x:Name="PatchPathSummaryText" TextWrapping="Wrap" />
+                                            </StackPanel>
+                                        </Grid>
+
+                                        <TextBlock Style="{StaticResource FieldLabel}" x:Uid="HomeStatusLabel" />
+                                        <TextBlock x:Name="StatusText" TextWrapping="Wrap" />
+                                        <Button Style="{StaticResource GhostButton}" Click="OnOpenSettings" x:Uid="HomeOpenSettings" />
+                                    </StackPanel>
+                                </Border>
+
+                                <StackPanel Grid.Column="1" Spacing="16">
+                                    <Border Style="{StaticResource CardBorder}">
+                                        <StackPanel Spacing="10">
+                                            <Grid ColumnDefinitions="*,Auto">
+                                                <TextBlock Style="{StaticResource CardTitle}" x:Uid="AnnouncementHeader" />
+                                                <Button Grid.Column="1" Style="{StaticResource IconButton}" Click="OnRefreshAnnouncement" x:Uid="AnnouncementRefresh" />
+                                            </Grid>
+                                            <TextBlock x:Name="AnnouncementTitleText" Style="{StaticResource AnnouncementTitle}" />
+                                            <TextBlock x:Name="AnnouncementBodyText" TextWrapping="Wrap" />
+                                            <TextBlock x:Name="AnnouncementMetaText" Style="{StaticResource SubtleText}" />
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Style="{StaticResource CardBorder}">
+                                        <StackPanel Spacing="10">
+                                            <TextBlock Style="{StaticResource CardTitle}" x:Uid="ServerHeader" />
+
+                                            <TextBlock Style="{StaticResource FieldLabel}" x:Uid="ServerExeLabel" />
+                                            <TextBlock x:Name="ServerExeSummaryText" TextWrapping="Wrap" />
+
+                                            <TextBlock Style="{StaticResource FieldLabel}" x:Uid="ServerStatusLabel" />
+                                            <TextBlock x:Name="ServerStatusText" TextWrapping="Wrap" />
+
+                                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                                <Button x:Name="ServerStartButton" Style="{StaticResource GhostButton}" Click="OnStartServer" x:Uid="ServerStart" />
+                                                <Button x:Name="ServerStopButton" Style="{StaticResource GhostButton}" Click="OnStopServer" x:Uid="ServerStop" />
+                                            </StackPanel>
+
+                                            <TextBlock Style="{StaticResource FieldLabel}" x:Uid="ServerLogLabel" />
+                                            <TextBox
+                                                x:Name="ServerLogBox"
+                                                IsReadOnly="True"
+                                                TextWrapping="NoWrap"
+                                                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                                ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                                AcceptsReturn="True"
+                                                Height="160" />
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Style="{StaticResource CardBorder}">
+                                        <StackPanel Spacing="10">
+                                            <TextBlock Style="{StaticResource CardTitle}" x:Uid="UpdateHeader" />
+
+                                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" RowDefinitions="Auto,Auto,Auto,Auto">
+                                                <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource FieldLabel}" x:Uid="UpdateLocalVersionLabel" />
+                                                <TextBlock Grid.Row="0" Grid.Column="1" x:Name="PsLocalVersionText" TextWrapping="Wrap" />
+
+                                                <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource FieldLabel}" x:Uid="UpdateLatestVersionLabel" />
+                                                <TextBlock Grid.Row="1" Grid.Column="1" x:Name="PsLatestVersionText" TextWrapping="Wrap" />
+
+                                                <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource FieldLabel}" x:Uid="UpdateNotesLabel" />
+                                                <TextBlock Grid.Row="2" Grid.Column="1" x:Name="PsUpdateNotesText" TextWrapping="Wrap" />
+
+                                                <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource FieldLabel}" x:Uid="UpdateStatusLabel" />
+                                                <TextBlock Grid.Row="3" Grid.Column="1" x:Name="PsUpdateStatusText" TextWrapping="Wrap" />
+                                            </Grid>
+
+                                            <StackPanel x:Name="PsUpdateProgressPanel" Spacing="6">
+                                                <TextBlock Style="{StaticResource FieldLabel}" x:Name="PsUpdateDownloadPathLabel" x:Uid="UpdateDownloadPathLabel" />
+                                                <TextBlock x:Name="PsUpdateDownloadPathText" TextWrapping="Wrap" />
+                                                <ProgressBar x:Name="PsUpdateProgressBar" Height="10" />
+                                                <TextBlock x:Name="PsUpdateProgressText" Style="{StaticResource SubtleText}" TextWrapping="Wrap" />
+                                            </StackPanel>
+
+                                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                                <Button x:Name="PsCheckUpdateButton" Style="{StaticResource GhostButton}" Click="OnCheckPsUpdate" x:Uid="UpdateCheck" />
+                                                <Button x:Name="PsUpdateButton" Style="{StaticResource GhostButton}" Click="OnUpdatePs" x:Uid="UpdateInstall" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Style="{StaticResource CardBorder}">
+                                        <StackPanel Spacing="10">
+                                            <TextBlock Style="{StaticResource CardTitle}" x:Uid="LauncherUpdateHeader" />
+
+                                            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" RowDefinitions="Auto,Auto,Auto,Auto">
+                                                <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource FieldLabel}" x:Uid="LauncherUpdateLocalVersionLabel" />
+                                                <TextBlock Grid.Row="0" Grid.Column="1" x:Name="LauncherLocalVersionText" TextWrapping="Wrap" />
+
+                                                <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource FieldLabel}" x:Uid="LauncherUpdateLatestVersionLabel" />
+                                                <TextBlock Grid.Row="1" Grid.Column="1" x:Name="LauncherLatestVersionText" TextWrapping="Wrap" />
+
+                                                <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource FieldLabel}" x:Uid="LauncherUpdateNotesLabel" />
+                                                <TextBlock Grid.Row="2" Grid.Column="1" x:Name="LauncherUpdateNotesText" TextWrapping="Wrap" />
+
+                                                <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource FieldLabel}" x:Uid="LauncherUpdateStatusLabel" />
+                                                <TextBlock Grid.Row="3" Grid.Column="1" x:Name="LauncherUpdateStatusText" TextWrapping="Wrap" />
+                                            </Grid>
+
+                                            <StackPanel x:Name="LauncherUpdateProgressPanel" Spacing="6">
+                                                <TextBlock Style="{StaticResource FieldLabel}" x:Uid="UpdateDownloadPathLabel" />
+                                                <TextBlock x:Name="LauncherUpdateDownloadPathText" TextWrapping="Wrap" />
+                                                <ProgressBar x:Name="LauncherUpdateProgressBar" Height="10" />
+                                                <TextBlock x:Name="LauncherUpdateProgressText" Style="{StaticResource SubtleText}" TextWrapping="Wrap" />
+                                            </StackPanel>
+
+                                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                                <Button x:Name="LauncherCheckUpdateButton" Style="{StaticResource GhostButton}" Click="OnCheckLauncherUpdate" x:Uid="UpdateCheck" />
+                                                <Button x:Name="LauncherUpdateButton" Style="{StaticResource GhostButton}" Click="OnUpdateLauncher" x:Uid="LauncherUpdateInstall" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Style="{StaticResource CardBorder}">
+                                        <StackPanel Spacing="8">
+                                            <TextBlock Style="{StaticResource CardTitle}" x:Uid="LinksHeader" />
+                                            <Button Style="{StaticResource LinkButton}" Click="OnOpenTools" x:Uid="LinkTools" />
+                                            <Button Style="{StaticResource LinkButton}" Click="OnOpenDiscord" x:Uid="LinkDiscord" />
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+                        </ScrollViewer>
+
+                        <Button
+                            x:Name="StartButton"
+                            Click="OnApplyPatchAndLaunch"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Bottom"
+                            Margin="0,0,16,16"
+                            Style="{StaticResource PrimaryStartButton}"
+                            x:Uid="HomeStartButton" />
+                    </Grid>
+
+                    <ScrollViewer x:Name="SettingsView" Visibility="Collapsed" Padding="20">
+                        <StackPanel MaxWidth="960" Spacing="12">
+                            <TextBlock Style="{StaticResource SectionHeader}" x:Uid="SettingsHeader" />
+
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                <TextBox x:Name="GamePathBox" x:Uid="SettingsGameExe" />
+                                <Button Grid.Column="1" Click="OnBrowseGameExe" x:Uid="SettingsBrowseGameExe" />
+                            </Grid>
+
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                <TextBox x:Name="PatchPathBox" x:Uid="SettingsPatchDir" />
+                                <Button Grid.Column="1" Click="OnBrowsePatchDir" x:Uid="SettingsBrowsePatchDir" />
+                            </Grid>
+
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                <TextBox x:Name="ServerPathBox" x:Uid="SettingsServerExe" />
+                                <Button Grid.Column="1" Click="OnBrowseServerExe" x:Uid="SettingsBrowseServerExe" />
+                            </Grid>
+
+                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                <TextBox x:Name="BackgroundPathBox" x:Uid="SettingsBackground" />
+                                <Button Grid.Column="1" Click="OnBrowseBackgroundImage" x:Uid="SettingsBrowseBackground" />
+                            </Grid>
+
+                            <TextBox x:Name="NoticeUrlBox" x:Uid="SettingsNoticeUrl" />
+
+                            <TextBox x:Name="UpdateUrlBox" x:Uid="SettingsUpdateUrl" />
+
+                            <ComboBox x:Name="LanguageBox" x:Uid="SettingsLanguage">
+                                <ComboBoxItem Tag="en-US" x:Uid="LanguageEnglish" />
+                                <ComboBoxItem Tag="zh-CN" x:Uid="LanguageSimplified" />
+                                <ComboBoxItem Tag="zh-TW" x:Uid="LanguageTraditional" />
+                            </ComboBox>
+
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <Button Click="OnSaveSettings" x:Uid="SettingsSave" />
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <ScrollViewer x:Name="LogsView" Visibility="Collapsed" Padding="20" HorizontalContentAlignment="Stretch">
+                        <Grid RowDefinitions="Auto,Auto,Auto,*" RowSpacing="12">
+                            <TextBlock Grid.Row="0" Style="{StaticResource SectionHeader}" x:Uid="LogsHeader" />
+
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="8">
+                                <Button Style="{StaticResource GhostButton}" Click="OnCopyLogs" x:Uid="LogsCopy" />
+                                <Button Style="{StaticResource GhostButton}" Click="OnExportLogs" x:Uid="LogsExport" />
+                                <Button Style="{StaticResource GhostButton}" Click="OnClearLogs" x:Uid="LogsClear" />
+                            </StackPanel>
+
+                            <TextBlock Grid.Row="2" x:Name="LogsStatusText" Style="{StaticResource SubtleText}" TextWrapping="Wrap" />
+
+                            <TextBox
+                                Grid.Row="3"
+                                x:Name="ServerLogBoxLarge"
+                                IsReadOnly="True"
+                                TextWrapping="NoWrap"
+                                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                AcceptsReturn="True"
+                                Height="520"
+                                HorizontalAlignment="Stretch" />
+                        </Grid>
+                    </ScrollViewer>
+
+                    <ScrollViewer x:Name="TutorialView" Visibility="Collapsed" Padding="20">
+                        <StackPanel MaxWidth="960" Spacing="12">
+                            <TextBlock Style="{StaticResource SectionHeader}" x:Uid="TutorialHeader" />
+                            <TextBlock TextWrapping="Wrap" x:Uid="TutorialBody" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </NavigationView.Content>
+        </NavigationView>
+    </Page.Content>
+</Page>
