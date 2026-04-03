@@ -387,4 +387,202 @@
   <data name="UpdateProgressUnknownTotalFormat" xml:space="preserve">
     <value>{0} downloaded</value>
   </data>
+  <data name="UiStatusReady" xml:space="preserve">
+    <value>Ready.</value>
+  </data>
+  <data name="UiStartTitleReady" xml:space="preserve">
+    <value>Start Game</value>
+  </data>
+  <data name="UiStartTitleNeedPath" xml:space="preserve">
+    <value>Set Path &amp; Start</value>
+  </data>
+  <data name="UiStartSubReady" xml:space="preserve">
+    <value>Auto Start Server + Launcher</value>
+  </data>
+  <data name="UiStartSubNeedPath" xml:space="preserve">
+    <value>Pick Game Directory</value>
+  </data>
+  <data name="UiStatusPickGameCanceled" xml:space="preserve">
+    <value>No game directory selected.</value>
+  </data>
+  <data name="UiStatusHomeReady" xml:space="preserve">
+    <value>Home is ready. Click Start Game to launch.</value>
+  </data>
+  <data name="UiTopHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="UiTopTools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="UiTopPlugins" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="UiTopHowTo" xml:space="preserve">
+    <value>How to?</value>
+  </data>
+  <data name="UiTopAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="UiPluginsNotEnabled" xml:space="preserve">
+    <value>Plugin system is not enabled in this build.</value>
+  </data>
+  <data name="UiHowToBody" xml:space="preserve">
+    <value>1. Select the game directory in Settings.&#x0A;2. Click Start Game.&#x0A;3. The launcher starts Server automatically and copies launcher.exe only when missing.</value>
+  </data>
+  <data name="UiVersionUnknown" xml:space="preserve">
+    <value>unknown</value>
+  </data>
+  <data name="UiAboutBodyFormat" xml:space="preserve">
+    <value>Castorice Launcher&#x0A;Version: {0}&#x0A;Local Mode</value>
+  </data>
+  <data name="UiOpenPatchOkFormat" xml:space="preserve">
+    <value>Opened patch directory: {0}</value>
+  </data>
+  <data name="UiOpenPatchFailFormat" xml:space="preserve">
+    <value>Failed to open patch directory: {0}</value>
+  </data>
+  <data name="UiStatusCurrentGameDirFormat" xml:space="preserve">
+    <value>Current game directory: {0}</value>
+  </data>
+  <data name="UiStatusGameDirNotSet" xml:space="preserve">
+    <value>Game directory is not set yet.</value>
+  </data>
+  <data name="UiStatusGameDirSetFormat" xml:space="preserve">
+    <value>Game directory set: {0}</value>
+  </data>
+  <data name="UiPatchDirMissingFormat" xml:space="preserve">
+    <value>Patch directory is missing: {0}</value>
+  </data>
+  <data name="UiGameDirInvalid" xml:space="preserve">
+    <value>Invalid game directory. Please reconfigure it.</value>
+  </data>
+  <data name="UiLauncherEnsureFailed" xml:space="preserve">
+    <value>launcher.exe is missing and auto-copy failed.</value>
+  </data>
+  <data name="UiLauncherStartedFormat" xml:space="preserve">
+    <value>Started: {0}</value>
+  </data>
+  <data name="UiServerAlreadyRunningFormat" xml:space="preserve">
+    <value>Server already running: {0} ({1})</value>
+  </data>
+  <data name="UiServerDirMissingFormat" xml:space="preserve">
+    <value>Server directory is missing: {0}</value>
+  </data>
+  <data name="UiServerExeMissingInDirFormat" xml:space="preserve">
+    <value>No executable found in server directory: {0}</value>
+  </data>
+  <data name="UiServerStartFailedFormat" xml:space="preserve">
+    <value>Failed to start server: {0}</value>
+  </data>
+  <data name="UiServerStartedFormat" xml:space="preserve">
+    <value>Server started: {0}</value>
+  </data>
+  <data name="UiLauncherExistsSkipCopy" xml:space="preserve">
+    <value>launcher.exe already exists. Skipping copy.</value>
+  </data>
+  <data name="UiCopyLauncherToGame" xml:space="preserve">
+    <value>Copying launcher.exe to game directory...</value>
+  </data>
+  <data name="UiOpenUrlOkFormat" xml:space="preserve">
+    <value>Opened: {0}</value>
+  </data>
+  <data name="UiOpenUrlFailFormat" xml:space="preserve">
+    <value>Failed to open: {0}</value>
+  </data>
+  <data name="UiPathNotSet" xml:space="preserve">
+    <value>Path: Not Set</value>
+  </data>
+  <data name="UiPathValueFormat" xml:space="preserve">
+    <value>Path: {0}</value>
+  </data>
+  <data name="UiPickGameDir" xml:space="preserve">
+    <value>Select Game Directory</value>
+  </data>
+  <data name="UiGameDirLabel" xml:space="preserve">
+    <value>Game Directory</value>
+  </data>
+  <data name="UiLanguageLabel" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="UiSettingsTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="UiSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="UiCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="UiSettingsSaved" xml:space="preserve">
+    <value>Settings saved.</value>
+  </data>
+  <data name="UiOpenPatchDir" xml:space="preserve">
+    <value>Open Patch Directory</value>
+  </data>
+  <data name="UiOpenServerDir" xml:space="preserve">
+    <value>Open Server Directory</value>
+  </data>
+  <data name="UiClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="UiTipSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="UiTipPatch" xml:space="preserve">
+    <value>Patch Directory</value>
+  </data>
+  <data name="UiTipStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="UiLeftTools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="UiLeftDiscord" xml:space="preserve">
+    <value>Discord</value>
+  </data>
+  <data name="UiWelcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="UiAboutLinksTitle" xml:space="preserve">
+    <value>References:</value>
+  </data>
+  <data name="UiPluginApplyLanguagePatch" xml:space="preserve">
+    <value>Apply Language Patch</value>
+  </data>
+  <data name="UiPluginApplyHdiff" xml:space="preserve">
+    <value>Apply HDiff Patch</value>
+  </data>
+  <data name="UiPluginLanguageSectionTitle" xml:space="preserve">
+    <value>Built-in Plugin: Language Patcher</value>
+  </data>
+  <data name="UiPluginTextLanguageLabel" xml:space="preserve">
+    <value>Text Language</value>
+  </data>
+  <data name="UiPluginVoiceLanguageLabel" xml:space="preserve">
+    <value>Voice Language</value>
+  </data>
+  <data name="UiPluginHdiffSectionTitle" xml:space="preserve">
+    <value>Built-in Plugin: HDiff Apply</value>
+  </data>
+  <data name="UiPluginHdiffDescription" xml:space="preserve">
+    <value>Apply hdiff/hdifffiles patch data in game directory.</value>
+  </data>
+  <data name="UiPluginLanguageEntryMissing" xml:space="preserve">
+    <value>AllowedLanguage entry not found in DesignV.</value>
+  </data>
+  <data name="UiPluginLanguagePatchOkFormat" xml:space="preserve">
+    <value>Language patch applied: text={0}, voice={1}</value>
+  </data>
+  <data name="UiPluginLanguagePatchFailedFormat" xml:space="preserve">
+    <value>Language patch failed: {0}</value>
+  </data>
+  <data name="UiPluginNoDiffEntries" xml:space="preserve">
+    <value>No diff entries found.</value>
+  </data>
+  <data name="UiPluginHdiffCompleted" xml:space="preserve">
+    <value>HDiff patch completed.</value>
+  </data>
+  <data name="UiPluginHdiffFailedFormat" xml:space="preserve">
+    <value>HDiff patch failed: {0}</value>
+  </data>
 </root>

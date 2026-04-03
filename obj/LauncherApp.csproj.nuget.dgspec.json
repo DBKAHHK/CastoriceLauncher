@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\SR-CasPS\\launcher\\CastoriceLauncher\\LauncherApp.csproj": {}
+    "D:\\Projects\\CastoriceLauncher\\LauncherApp.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\SR-CasPS\\launcher\\CastoriceLauncher\\LauncherApp.csproj": {
+    "D:\\Projects\\CastoriceLauncher\\LauncherApp.csproj": {
       "version": "1.0.1",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\SR-CasPS\\launcher\\CastoriceLauncher\\LauncherApp.csproj",
+        "projectUniqueName": "D:\\Projects\\CastoriceLauncher\\LauncherApp.csproj",
         "projectName": "LauncherApp",
-        "projectPath": "D:\\Projects\\SR-CasPS\\launcher\\CastoriceLauncher\\LauncherApp.csproj",
+        "projectPath": "D:\\Projects\\CastoriceLauncher\\LauncherApp.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\SR-CasPS\\launcher\\CastoriceLauncher\\obj\\",
+        "outputPath": "D:\\Projects\\CastoriceLauncher\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,6 +44,12 @@
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
           "dependencies": {
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.25, )",
+              "autoReferenced": true
+            },
             "Microsoft.Web.WebView2": {
               "target": "Package",
               "version": "[1.*, )"
@@ -71,27 +77,27 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-arm64",
-              "version": "[8.0.22, 8.0.22]"
+              "version": "[8.0.25, 8.0.25]"
             },
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-              "version": "[8.0.22, 8.0.22]"
+              "version": "[8.0.25, 8.0.25]"
             },
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
-              "version": "[8.0.22, 8.0.22]"
+              "version": "[8.0.25, 8.0.25]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-arm64",
-              "version": "[8.0.22, 8.0.22]"
+              "version": "[8.0.25, 8.0.25]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x64",
-              "version": "[8.0.22, 8.0.22]"
+              "version": "[8.0.25, 8.0.25]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x86",
-              "version": "[8.0.22, 8.0.22]"
+              "version": "[8.0.25, 8.0.25]"
             },
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
@@ -99,15 +105,15 @@
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-arm64",
-              "version": "[8.0.22, 8.0.22]"
+              "version": "[8.0.25, 8.0.25]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-              "version": "[8.0.22, 8.0.22]"
+              "version": "[8.0.25, 8.0.25]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
-              "version": "[8.0.22, 8.0.22]"
+              "version": "[8.0.25, 8.0.25]"
             }
           ],
           "frameworkReferences": {
@@ -118,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.312\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {

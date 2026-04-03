@@ -1,0 +1,21 @@
+# Build outputs
+bin/
+obj/
+
+# IDE
+.vs/
+*.user
+*.suo
+
+# Local runtime files
+launcher.log
+launcher-settings.json
+*.log
+
+# Packaging / distribution payloads (non-source)
+artifacts/
+Patch/
+Server/
+Tools/
+*.zip
+README-PACKAGE.txt

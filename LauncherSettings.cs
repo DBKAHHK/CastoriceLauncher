@@ -5,14 +5,8 @@ namespace LauncherApp;
 
 public sealed class LauncherSettings
 {
-    private const string DefaultBackgroundUri = "ms-appx:///Assets/DefaultBackground.webp";
-    public string GameExePath { get; set; } = "";
-    public string PatchSourcePath { get; set; } = "";
-    public string ServerExePath { get; set; } = "";
+    public string GameDirectoryPath { get; set; } = "";
     public string LanguageTag { get; set; } = "";
-    public string BackgroundImagePath { get; set; } = "";
-    public string NoticeUrl { get; set; } = "";
-    public string UpdateUrl { get; set; } = "";
 
     public static string SettingsPath
     {
@@ -63,56 +57,7 @@ public sealed class LauncherSettings
 
     public void ApplyDefaults()
     {
-        if (string.IsNullOrWhiteSpace(GameExePath))
-        {
-            var settingsPath = FindInParents("CastoricePS-settings.json", expectFile: true);
-            if (settingsPath != null)
-            {
-                var fromSettings = TryReadLastSelected(settingsPath);
-                if (!string.IsNullOrWhiteSpace(fromSettings))
-                {
-                    GameExePath = fromSettings;
-                }
-            }
-        }
-
-        if (string.IsNullOrWhiteSpace(PatchSourcePath))
-        {
-            PatchSourcePath = FindInParents("launcher\\patch", expectFile: false)
-                ?? Path.Combine(AppContext.BaseDirectory, "patch");
-        }
-
-        if (string.IsNullOrWhiteSpace(ServerExePath))
-        {
-            var found =
-                FindInParents("CastoricePS.exe", expectFile: true)
-                ?? FindInParents("zig-out\\bin\\CastoricePS.exe", expectFile: true);
-            if (!string.IsNullOrWhiteSpace(found))
-            {
-                ServerExePath = found;
-            }
-            else
-            {
-                var serverDir = EnsureServerDirectory();
-                ServerExePath = Path.Combine(serverDir, "CastoricePS.exe");
-            }
-        }
-
-        if (string.IsNullOrWhiteSpace(BackgroundImagePath))
-        {
-            BackgroundImagePath = DefaultBackgroundUri;
-        }
-
-        if (string.IsNullOrWhiteSpace(NoticeUrl))
-        {
-            NoticeUrl = "111.170.35.230:5080";
-        }
-
-        if (string.IsNullOrWhiteSpace(UpdateUrl))
-        {
-            UpdateUrl = "111.170.35.230:5080";
-        }
-
+        GameDirectoryPath = GameDirectoryPath?.Trim() ?? "";
         LanguageTag = ResolveLanguageTag(LanguageTag);
     }
 
@@ -120,19 +65,19 @@ public sealed class LauncherSettings
     {
         if (!string.IsNullOrWhiteSpace(languageTag))
         {
-            return NormalizeChineseTag(languageTag);
+            return NormalizeLanguageTag(languageTag);
         }
 
         var languages = GlobalizationPreferences.Languages;
         if (languages.Count > 0)
         {
-            return NormalizeChineseTag(languages[0]);
+            return NormalizeLanguageTag(languages[0]);
         }
 
         return "en-US";
     }
 
-    private static string NormalizeChineseTag(string languageTag)
+    private static string NormalizeLanguageTag(string languageTag)
     {
         var tag = languageTag.Trim().ToLowerInvariant();
         if (tag.StartsWith("zh-hans") || tag.StartsWith("zh-cn") || tag.StartsWith("zh-sg") || tag.StartsWith("zh-my"))
@@ -145,55 +90,11 @@ public sealed class LauncherSettings
             return "zh-TW";
         }
 
+        if (tag.StartsWith("en"))
+        {
+            return "en-US";
+        }
+
         return "en-US";
-    }
-
-    private static string? FindInParents(string relativePath, bool expectFile)
-    {
-        var dir = new DirectoryInfo(AppContext.BaseDirectory);
-        while (dir != null)
-        {
-            var candidate = Path.Combine(dir.FullName, relativePath);
-            if (expectFile)
-            {
-                if (File.Exists(candidate)) return candidate;
-            }
-            else
-            {
-                if (Directory.Exists(candidate)) return candidate;
-            }
-            dir = dir.Parent;
-        }
-
-        return null;
-    }
-
-    private static string? TryReadLastSelected(string settingsPath)
-    {
-        try
-        {
-            var json = File.ReadAllText(settingsPath);
-            using var doc = JsonDocument.Parse(json);
-            if (doc.RootElement.TryGetProperty("last_selected", out var prop))
-            {
-                if (prop.ValueKind == JsonValueKind.String)
-                {
-                    return prop.GetString();
-                }
-            }
-        }
-        catch
-        {
-            return null;
-        }
-
-        return null;
-    }
-
-    public static string EnsureServerDirectory()
-    {
-        var dir = Path.Combine(AppContext.BaseDirectory, "server");
-        Directory.CreateDirectory(dir);
-        return dir;
     }
 }

@@ -387,4 +387,202 @@
   <data name="UpdateProgressUnknownTotalFormat" xml:space="preserve">
     <value>已下载 {0}</value>
   </data>
+  <data name="UiStatusReady" xml:space="preserve">
+    <value>就绪。</value>
+  </data>
+  <data name="UiStartTitleReady" xml:space="preserve">
+    <value>启动游戏</value>
+  </data>
+  <data name="UiStartTitleNeedPath" xml:space="preserve">
+    <value>设置路径并启动</value>
+  </data>
+  <data name="UiStartSubReady" xml:space="preserve">
+    <value>自动拉起服务端与启动器</value>
+  </data>
+  <data name="UiStartSubNeedPath" xml:space="preserve">
+    <value>选择游戏目录</value>
+  </data>
+  <data name="UiStatusPickGameCanceled" xml:space="preserve">
+    <value>未选择游戏目录。</value>
+  </data>
+  <data name="UiStatusHomeReady" xml:space="preserve">
+    <value>主页已就绪，点击“启动游戏”即可开始。</value>
+  </data>
+  <data name="UiTopHome" xml:space="preserve">
+    <value>主页</value>
+  </data>
+  <data name="UiTopTools" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="UiTopPlugins" xml:space="preserve">
+    <value>插件</value>
+  </data>
+  <data name="UiTopHowTo" xml:space="preserve">
+    <value>使用说明</value>
+  </data>
+  <data name="UiTopAbout" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="UiPluginsNotEnabled" xml:space="preserve">
+    <value>当前版本未启用插件系统。</value>
+  </data>
+  <data name="UiHowToBody" xml:space="preserve">
+    <value>1. 在设置中选择游戏目录。&#x0A;2. 点击“启动游戏”。&#x0A;3. 启动器会自动拉起服务端，并仅在缺少 launcher.exe 时进行复制。</value>
+  </data>
+  <data name="UiVersionUnknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="UiAboutBodyFormat" xml:space="preserve">
+    <value>Castorice 启动器&#x0A;版本：{0}&#x0A;本地模式</value>
+  </data>
+  <data name="UiOpenPatchOkFormat" xml:space="preserve">
+    <value>已打开补丁目录：{0}</value>
+  </data>
+  <data name="UiOpenPatchFailFormat" xml:space="preserve">
+    <value>打开补丁目录失败：{0}</value>
+  </data>
+  <data name="UiStatusCurrentGameDirFormat" xml:space="preserve">
+    <value>当前游戏目录：{0}</value>
+  </data>
+  <data name="UiStatusGameDirNotSet" xml:space="preserve">
+    <value>当前未设置游戏目录。</value>
+  </data>
+  <data name="UiStatusGameDirSetFormat" xml:space="preserve">
+    <value>已设置游戏目录：{0}</value>
+  </data>
+  <data name="UiPatchDirMissingFormat" xml:space="preserve">
+    <value>补丁目录不存在：{0}</value>
+  </data>
+  <data name="UiGameDirInvalid" xml:space="preserve">
+    <value>游戏目录无效，请重新设置。</value>
+  </data>
+  <data name="UiLauncherEnsureFailed" xml:space="preserve">
+    <value>未找到 launcher.exe，且自动复制失败。</value>
+  </data>
+  <data name="UiLauncherStartedFormat" xml:space="preserve">
+    <value>已启动：{0}</value>
+  </data>
+  <data name="UiServerAlreadyRunningFormat" xml:space="preserve">
+    <value>服务器已在运行：{0}（{1}）</value>
+  </data>
+  <data name="UiServerDirMissingFormat" xml:space="preserve">
+    <value>服务器目录不存在：{0}</value>
+  </data>
+  <data name="UiServerExeMissingInDirFormat" xml:space="preserve">
+    <value>服务器目录中未找到可执行文件：{0}</value>
+  </data>
+  <data name="UiServerStartFailedFormat" xml:space="preserve">
+    <value>服务器启动失败：{0}</value>
+  </data>
+  <data name="UiServerStartedFormat" xml:space="preserve">
+    <value>服务器已启动：{0}</value>
+  </data>
+  <data name="UiLauncherExistsSkipCopy" xml:space="preserve">
+    <value>游戏目录已存在 launcher.exe，跳过复制。</value>
+  </data>
+  <data name="UiCopyLauncherToGame" xml:space="preserve">
+    <value>正在复制 launcher.exe 到游戏目录...</value>
+  </data>
+  <data name="UiOpenUrlOkFormat" xml:space="preserve">
+    <value>已打开：{0}</value>
+  </data>
+  <data name="UiOpenUrlFailFormat" xml:space="preserve">
+    <value>打开失败：{0}</value>
+  </data>
+  <data name="UiPathNotSet" xml:space="preserve">
+    <value>路径：未设置</value>
+  </data>
+  <data name="UiPathValueFormat" xml:space="preserve">
+    <value>路径：{0}</value>
+  </data>
+  <data name="UiPickGameDir" xml:space="preserve">
+    <value>选择游戏目录</value>
+  </data>
+  <data name="UiGameDirLabel" xml:space="preserve">
+    <value>游戏目录</value>
+  </data>
+  <data name="UiLanguageLabel" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="UiSettingsTitle" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="UiSave" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="UiCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="UiSettingsSaved" xml:space="preserve">
+    <value>设置已保存。</value>
+  </data>
+  <data name="UiOpenPatchDir" xml:space="preserve">
+    <value>打开补丁目录</value>
+  </data>
+  <data name="UiOpenServerDir" xml:space="preserve">
+    <value>打开服务端目录</value>
+  </data>
+  <data name="UiClose" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="UiTipSettings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="UiTipPatch" xml:space="preserve">
+    <value>补丁目录</value>
+  </data>
+  <data name="UiTipStatus" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="UiLeftTools" xml:space="preserve">
+    <value>工具</value>
+  </data>
+  <data name="UiLeftDiscord" xml:space="preserve">
+    <value>社群</value>
+  </data>
+  <data name="UiWelcome" xml:space="preserve">
+    <value>欢迎</value>
+  </data>
+  <data name="UiAboutLinksTitle" xml:space="preserve">
+    <value>参考项目：</value>
+  </data>
+  <data name="UiPluginApplyLanguagePatch" xml:space="preserve">
+    <value>应用语言补丁</value>
+  </data>
+  <data name="UiPluginApplyHdiff" xml:space="preserve">
+    <value>应用 HDiff 补丁</value>
+  </data>
+  <data name="UiPluginLanguageSectionTitle" xml:space="preserve">
+    <value>内置插件：语言补丁器</value>
+  </data>
+  <data name="UiPluginTextLanguageLabel" xml:space="preserve">
+    <value>文本语言</value>
+  </data>
+  <data name="UiPluginVoiceLanguageLabel" xml:space="preserve">
+    <value>语音语言</value>
+  </data>
+  <data name="UiPluginHdiffSectionTitle" xml:space="preserve">
+    <value>内置插件：HDiff 应用器</value>
+  </data>
+  <data name="UiPluginHdiffDescription" xml:space="preserve">
+    <value>在游戏目录中应用 hdiff/hdifffiles 补丁数据。</value>
+  </data>
+  <data name="UiPluginLanguageEntryMissing" xml:space="preserve">
+    <value>在 DesignV 中未找到 AllowedLanguage 条目。</value>
+  </data>
+  <data name="UiPluginLanguagePatchOkFormat" xml:space="preserve">
+    <value>语言补丁已应用：文本={0}，语音={1}</value>
+  </data>
+  <data name="UiPluginLanguagePatchFailedFormat" xml:space="preserve">
+    <value>语言补丁失败：{0}</value>
+  </data>
+  <data name="UiPluginNoDiffEntries" xml:space="preserve">
+    <value>未找到可用的差分条目。</value>
+  </data>
+  <data name="UiPluginHdiffCompleted" xml:space="preserve">
+    <value>HDiff 补丁应用完成。</value>
+  </data>
+  <data name="UiPluginHdiffFailedFormat" xml:space="preserve">
+    <value>HDiff 补丁失败：{0}</value>
+  </data>
 </root>

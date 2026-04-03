@@ -24,6 +24,7 @@
         <UseRidGraph>true</UseRidGraph>
         <Platforms>x86;x64;ARM64</Platforms>
         <ApplicationManifest>app.manifest</ApplicationManifest>
+        <ApplicationIcon>Assets\icon.ico</ApplicationIcon>
         <PublishProfile Condition="Exists('Properties\\PublishProfiles\\win-$(Platform).pubxml')">win-$(Platform).pubxml</PublishProfile>
         <RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) >= 8">win-x86;win-x64;win-arm64</RuntimeIdentifiers>
         <RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &lt; 8">win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
@@ -38,12 +39,21 @@
         <Content Include="Assets\StoreLogo.png" />
         <Content Include="Assets\Wide310x150Logo.scale-200.png" />
         <Content Include="Assets\DefaultBackground.webp" />
+        <Content Include="Assets\icon.ico">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
         <!-- Ship built-in patch files next to the launcher (publish output: ./patch/*). -->
-        <None Include="..\patch\**\*">
+        <None Include="Patch\**\*">
             <Link>patch\%(RecursiveDir)%(Filename)%(Extension)</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </None>
+        <None Include="Tools\**\*">
+            <Link>tools\%(RecursiveDir)%(Filename)%(Extension)</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
         </None>

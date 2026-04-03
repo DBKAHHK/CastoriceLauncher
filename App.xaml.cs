@@ -1,6 +1,8 @@
 using System.Globalization;
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml.Navigation;
 using Microsoft.UI.Xaml.Media;
+using WinRT.Interop;
 
 namespace LauncherApp
 {
@@ -19,6 +21,7 @@ namespace LauncherApp
         public App()
         {
             Logger.Init();
+            Environment.SetEnvironmentVariable("MICROSOFT_WINDOWSAPPRUNTIME_BASE_DIRECTORY", AppContext.BaseDirectory);
             UnhandledException += OnUnhandledException;
             AppDomain.CurrentDomain.UnhandledException += (_, e) =>
             {
@@ -44,6 +47,7 @@ namespace LauncherApp
             {
                 var settings = LauncherSettings.Load();
                 ApplyLanguageOverride(settings.LanguageTag);
+                settings.Save();
 
                 window ??= new Window();
                 MainWindow = window;
@@ -59,6 +63,7 @@ namespace LauncherApp
 
                 _ = rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 window.Activate();
+                TrySetWindowIcon(window);
             }
             catch (Exception ex)
             {
@@ -119,6 +124,27 @@ namespace LauncherApp
             catch
             {
                 return false;
+            }
+        }
+
+        private static void TrySetWindowIcon(Window window)
+        {
+            try
+            {
+                var iconPath = Path.Combine(AppContext.BaseDirectory, "Assets", "icon.ico");
+                if (!File.Exists(iconPath))
+                {
+                    return;
+                }
+
+                var hwnd = WindowNative.GetWindowHandle(window);
+                var windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hwnd);
+                var appWindow = AppWindow.GetFromWindowId(windowId);
+                appWindow.SetIcon(iconPath);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex, "Failed to set window icon.");
             }
         }
 
